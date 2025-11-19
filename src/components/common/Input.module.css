@@ -5,13 +5,13 @@
 
 .input {
     width: 100%;
-    padding: var(--space-6) var(--space-3) var(--space-2);
+    padding: 24px var(--space-4) 8px;
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
     font-size: 0.95rem;
+    transition: border-color 0.2s;
+    background: var(--bg-surface);
     color: var(--text-main);
-    background-color: var(--bg-surface);
-    transition: all 0.2s;
 }
 
 .input:focus {
@@ -22,14 +22,15 @@
 
 .label {
     position: absolute;
-    left: var(--space-3);
-    top: 14px;
-    /* Vertically centered for default height */
-    font-size: 0.95rem;
+    left: var(--space-4);
+    top: 16px;
     color: var(--text-secondary);
+    font-size: 0.95rem;
     pointer-events: none;
     transition: all 0.2s ease-out;
     transform-origin: left top;
+    background: var(--bg-surface);
+    padding: 0 4px;
 }
 
 /* Floating state */
@@ -37,18 +38,17 @@
 .input:not(:placeholder-shown)+.label {
     transform: translateY(-10px) scale(0.85);
     color: var(--primary);
-    font-weight: 500;
 }
 
 /* Textarea specific adjustments */
 textarea.input {
     min-height: 120px;
     resize: vertical;
+    padding-bottom: 30px;
 }
 
 textarea.input+.label {
     top: var(--space-4);
-    /* Start at top for textarea */
 }
 
 textarea.input:focus+.label,
@@ -58,5 +58,26 @@ textarea.input:not(:placeholder-shown)+.label {
 
 .input::placeholder {
     color: transparent;
-    /* Hide actual placeholder to show label */
+}
+
+/* Character count */
+.charCount {
+    position: absolute;
+    right: var(--space-3);
+    bottom: var(--space-2);
+    font-size: 11px;
+    font-weight: 500;
+    pointer-events: none;
+}
+
+.countNormal {
+    color: var(--text-muted);
+}
+
+.countWarning {
+    color: #f59e0b;
+}
+
+.countError {
+    color: #ef4444;
 }

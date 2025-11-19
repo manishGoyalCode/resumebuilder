@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTheme } from '../../context/ThemeContext';
+import { SaveStatus } from '../common/SaveStatus';
 import styles from './Header.module.css';
 
 export const Header: React.FC = () => {
@@ -10,6 +11,7 @@ export const Header: React.FC = () => {
             <div className={styles.logo}>
                 <h1>TechResumePro</h1>
                 <span className={styles.badge}>Beta</span>
+                <SaveStatus />
             </div>
             <nav className={styles.nav}>
                 <button

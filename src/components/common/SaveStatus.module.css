@@ -1,0 +1,46 @@
+.status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: var(--radius-full);
+    transition: all 0.3s ease;
+}
+
+.saving {
+    color: #f59e0b;
+    background: rgba(245, 158, 11, 0.1);
+}
+
+.saved {
+    color: #10b981;
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.error {
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.spinner {
+    width: 14px;
+    height: 14px;
+    border: 2px solid currentColor;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.checkmark,
+.error {
+    font-size: 16px;
+    font-weight: 700;
+}
