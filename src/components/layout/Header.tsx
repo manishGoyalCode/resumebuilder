@@ -8,7 +8,7 @@ export const Header: React.FC = () => {
     return (
         <header className={styles.header}>
             <div className={styles.logo}>
-                <h1>DevResume</h1>
+                <h1>Resume By Manish</h1>
                 <span className={styles.badge}>Beta</span>
             </div>
             <nav className={styles.nav}>
@@ -25,8 +25,8 @@ export const Header: React.FC = () => {
                 >
                     Download PDF
                 </button>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className={styles.link}>
-                    GitHub
+                <a href="https://www.linkedin.com/in/manish-goyal-8900b2188/" target="_blank" rel="noopener noreferrer" className={styles.link}>
+                    LinkedIn
                 </a>
             </nav>
         </header>
