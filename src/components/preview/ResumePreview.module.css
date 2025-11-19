@@ -1,0 +1,131 @@
+.resume {
+    width: 210mm;
+    min-height: 297mm;
+    background: white;
+    padding: 20mm;
+    color: #1f2937;
+    /* Gray-800 */
+    font-family: var(--font-sans);
+    line-height: 1.5;
+    box-sizing: border-box;
+}
+
+.header {
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #e5e7eb;
+    /* Gray-200 */
+    padding-bottom: 1.5rem;
+}
+
+.name {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #111827;
+    /* Gray-900 */
+    margin-bottom: 0.25rem;
+    line-height: 1.2;
+}
+
+.title {
+    font-size: 1.125rem;
+    color: #4b5563;
+    /* Gray-600 */
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+    /* Gray-500 */
+}
+
+.contactItem {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.section {
+    margin-bottom: 1.5rem;
+}
+
+.sectionTitle {
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #374151;
+    /* Gray-700 */
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 0.25rem;
+    margin-bottom: 1rem;
+}
+
+.experienceItem,
+.projectItem,
+.educationItem {
+    margin-bottom: 1rem;
+}
+
+.itemHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.25rem;
+}
+
+.itemTitle {
+    font-weight: 600;
+    color: #111827;
+}
+
+.itemSubtitle {
+    font-weight: 500;
+    color: #4b5563;
+}
+
+.itemDate {
+    font-size: 0.875rem;
+    color: #6b7280;
+    white-space: nowrap;
+}
+
+.description {
+    font-size: 0.925rem;
+    color: #4b5563;
+    white-space: pre-wrap;
+}
+
+.skillsList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skillCategory {
+    margin-bottom: 0.5rem;
+}
+
+.categoryName {
+    font-weight: 600;
+    font-size: 0.925rem;
+    color: #374151;
+    margin-right: 0.5rem;
+}
+
+.skillItems {
+    font-size: 0.925rem;
+    color: #4b5563;
+}
+
+@media print {
+    .resume {
+        padding: 0;
+        width: 100%;
+        height: 100%;
+    }
+}

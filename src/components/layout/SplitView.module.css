@@ -1,0 +1,50 @@
+.container {
+    display: flex;
+    height: calc(100vh - 64px);
+    /* Subtract header height */
+    overflow: hidden;
+}
+
+.editorPane {
+    width: 50%;
+    height: 100%;
+    overflow-y: auto;
+    background-color: var(--bg-surface);
+    border-right: 1px solid var(--border);
+    padding: var(--space-6);
+}
+
+.previewPane {
+    width: 50%;
+    height: 100%;
+    overflow-y: auto;
+    background-color: var(--bg-body);
+    padding: var(--space-8);
+    display: flex;
+    justify-content: center;
+}
+
+.previewWrapper {
+    width: 100%;
+    max-width: 210mm;
+    /* A4 width */
+    /* Scale down if needed on smaller screens could be handled here or via JS */
+}
+
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .editorPane,
+    .previewPane {
+        width: 100%;
+        height: auto;
+        overflow: visible;
+    }
+
+    .previewPane {
+        border-top: 1px solid var(--border);
+    }
+}
