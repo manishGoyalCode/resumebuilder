@@ -2,49 +2,46 @@ import React from 'react';
 import { useResume } from '../../context/ResumeContext';
 import styles from './TemplatesForm.module.css';
 
-const templates = [
-    { id: 'modern', name: 'Modern', description: 'Clean and balanced, perfect for general use.' },
-    { id: 'classic', name: 'Classic', description: 'Traditional serif layout, great for corporate roles.' },
-    { id: 'sidebar', name: 'Sidebar', description: 'Two-column layout with a dedicated sidebar.' },
-    { id: 'compact', name: 'Compact', description: 'Dense layout to fit more information on one page.' },
-    { id: 'creative', name: 'Creative', description: 'Bold headers and accents for a standout look.' },
-];
-
 export const TemplatesForm: React.FC = () => {
     const { resumeData, updateSection } = useResume();
 
-    const handleSelect = (id: string) => {
-        // We're treating 'selectedTemplate' as a section for the update helper, 
-        // but we might need to cast it or update the context type if strict.
-        // For now, assuming updateSection handles root level keys or we use a direct setter if needed.
-        // Checking ResumeContext, updateSection updates nested keys or root keys?
-        // It seems updateSection takes a key of ResumeData.
-        updateSection('selectedTemplate', id as any);
+    const templates = [
+        { id: 'modern' as const, name: 'Modern', description: 'Clean and contemporary design' },
+        { id: 'classic' as const, name: 'Classic', description: 'Traditional professional layout' },
+        { id: 'creative' as const, name: 'Creative', description: 'Bold and artistic style' },
+        { id: 'executive' as const, name: 'Executive', description: 'ATS-friendly corporate format' },
+        { id: 'minimalist' as const, name: 'Minimalist', description: 'Simple and elegant' },
+        { id: 'professional' as const, name: 'Professional', description: 'Formal traditional design' },
+        { id: 'tech' as const, name: 'Tech', description: 'Developer-focused with code aesthetics' },
+        { id: 'designer' as const, name: 'Designer', description: 'Creative portfolio showcase' },
+        { id: 'academic' as const, name: 'Academic', description: 'Research and CV format' },
+        { id: 'startup' as const, name: 'Startup', description: 'Modern and energetic' },
+    ];
+
+    const handleTemplateChange = (templateId: typeof templates[number]['id']) => {
+        updateSection('selectedTemplate', templateId);
     };
 
     return (
         <div className={styles.container}>
-            <h3>Choose a Template</h3>
+            <h3 className={styles.title}>Choose Your Template</h3>
+            <p className={styles.subtitle}>Select a template that best fits your industry and style</p>
+
             <div className={styles.grid}>
-                {templates.map((template) => (
-                    <div
+                {templates.map(template => (
+                    <button
                         key={template.id}
-                        className={`${styles.card} ${resumeData.selectedTemplate === template.id ? styles.active : ''}`}
-                        onClick={() => handleSelect(template.id)}
+                        className={`${styles.card} ${resumeData.selectedTemplate === template.id ? styles.selected : ''}`}
+                        onClick={() => handleTemplateChange(template.id)}
                     >
-                        <div className={`${styles.preview} ${styles[template.id]}`}>
-                            {/* Abstract representation of the template */}
-                            <div className={styles.previewHeader}></div>
-                            <div className={styles.previewBody}>
-                                <div className={styles.previewLine}></div>
-                                <div className={styles.previewLine}></div>
-                            </div>
+                        <div className={styles.cardHeader}>
+                            <h4 className={styles.templateName}>{template.name}</h4>
+                            {resumeData.selectedTemplate === template.id && (
+                                <span className={styles.badge}>Selected</span>
+                            )}
                         </div>
-                        <div className={styles.info}>
-                            <h4>{template.name}</h4>
-                            <p>{template.description}</p>
-                        </div>
-                    </div>
+                        <p className={styles.description}>{template.description}</p>
+                    </button>
                 ))}
             </div>
         </div>

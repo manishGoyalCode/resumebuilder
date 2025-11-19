@@ -50,11 +50,11 @@ export interface SkillCategory {
 
 export interface ResumeData {
   personalInfo: PersonalInfo;
+  skills: SkillCategory[];
   experience: Experience[];
   projects: Project[];
   education: Education[];
-  skills: SkillCategory[];
-  selectedTemplate: 'modern' | 'classic' | 'sidebar' | 'compact' | 'creative';
+  selectedTemplate: 'modern' | 'classic' | 'creative' | 'executive' | 'minimalist' | 'professional' | 'tech' | 'designer' | 'academic' | 'startup';
 }
 
 export const initialResumeState: ResumeData = {
@@ -67,9 +67,9 @@ export const initialResumeState: ResumeData = {
     summary: '',
     socialLinks: []
   },
+  skills: [],
   experience: [],
   projects: [],
   education: [],
-  skills: [],
   selectedTemplate: 'modern'
 };

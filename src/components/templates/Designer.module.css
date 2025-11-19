@@ -1,0 +1,191 @@
+.resume {
+    font-family: 'Inter', sans-serif;
+    color: #1a1a1a;
+    background: white;
+    padding: 0;
+}
+
+.header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 50px 40px;
+    position: relative;
+}
+
+.accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+}
+
+.name {
+    font-size: 36px;
+    font-weight: 800;
+    margin: 0 0 8px 0;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 12px;
+    opacity: 0.9;
+}
+
+.contact {
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+.grid {
+    display: flex;
+    gap: 30px;
+    padding: 40px;
+}
+
+.mainCol {
+    flex: 2;
+}
+
+.sideCol {
+    flex: 1;
+}
+
+.section {
+    margin-bottom: 35px;
+}
+
+.sectionTitle {
+    font-size: 20px;
+    font-weight: 700;
+    color: #667eea;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.sectionTitle::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+.summary {
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.project {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+}
+
+.projectName {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    color: #1a1a1a;
+}
+
+.projectDesc {
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 0 0 12px 0;
+    color: #555;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    background: #667eea;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.item {
+    margin-bottom: 20px;
+}
+
+.role {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0 0 4px 0;
+}
+
+.company {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.description {
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 0;
+    color: #444;
+}
+
+.skillGroup {
+    margin-bottom: 20px;
+}
+
+.skillCat {
+    font-size: 13px;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+}
+
+.skillTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.skillTag {
+    background: #f0f0f0;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    color: #555;
+}
+
+.eduItem {
+    margin-bottom: 18px;
+}
+
+.eduDegree {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.eduField {
+    font-size: 12px;
+    color: #666;
+}
+
+.eduSchool {
+    font-size: 12px;
+    color: #888;
+}
+
+.eduDate {
+    font-size: 11px;
+    color: #999;
+}
