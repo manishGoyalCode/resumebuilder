@@ -5,18 +5,18 @@ interface TextAreaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
     label: string;
 }
 
-export const TextArea: React.FC<TextAreaProps> = ({ label, id, className, ...props }) => {
+export const TextArea: React.FC<TextAreaProps> = ({ label, id, className, placeholder, ...props }) => {
     return (
         <div className={styles.wrapper}>
-            <label htmlFor={id} className={styles.label}>
-                {label}
-            </label>
             <textarea
                 id={id}
                 className={`${styles.input} ${className || ''}`}
-                style={{ minHeight: '100px', resize: 'vertical' }}
+                placeholder={placeholder || " "}
                 {...props}
             />
+            <label htmlFor={id} className={styles.label}>
+                {label}
+            </label>
         </div>
     );
 };

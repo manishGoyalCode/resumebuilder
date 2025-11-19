@@ -9,8 +9,10 @@
     width: 50%;
     height: 100%;
     overflow-y: auto;
-    background-color: var(--bg-surface);
-    border-right: 1px solid var(--border);
+    background-color: var(--bg-glass);
+    backdrop-filter: blur(var(--blur-glass));
+    -webkit-backdrop-filter: blur(var(--blur-glass));
+    border-right: 1px solid var(--bg-glass-border);
     padding: var(--space-6);
 }
 
@@ -18,7 +20,7 @@
     width: 50%;
     height: 100%;
     overflow-y: auto;
-    background-color: var(--bg-body);
+    background-color: transparent;
     padding: var(--space-8);
     display: flex;
     justify-content: center;

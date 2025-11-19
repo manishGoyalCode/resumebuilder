@@ -1,7 +1,10 @@
 import React, { useRef, useEffect, useState } from 'react';
+import { useResume } from '../../context/ResumeContext';
 import { ResumePreview } from './ResumePreview';
+import { EmptyState } from './EmptyState';
 
 export const Preview: React.FC = () => {
+    const { resumeData } = useResume();
     const containerRef = useRef<HTMLDivElement>(null);
     const [scale, setScale] = useState(1);
 
@@ -25,6 +28,8 @@ export const Preview: React.FC = () => {
         return () => window.removeEventListener('resize', updateScale);
     }, []);
 
+    const hasData = !!resumeData.personalInfo.fullName;
+
     return (
         <div id="preview-scaler" ref={containerRef} style={{
             transform: `scale(${scale})`,
@@ -35,9 +40,11 @@ export const Preview: React.FC = () => {
                 boxShadow: 'var(--shadow-lg)',
                 width: '210mm',
                 minHeight: '297mm',
-                background: 'white'
+                background: 'white',
+                display: 'flex',
+                flexDirection: 'column'
             }}>
-                <ResumePreview />
+                {hasData ? <ResumePreview /> : <EmptyState />}
             </div>
         </div>
     );

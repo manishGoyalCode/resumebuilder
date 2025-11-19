@@ -1,24 +1,17 @@
 .wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
+    position: relative;
     margin-bottom: var(--space-4);
 }
 
-.label {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--text-secondary);
-}
-
 .input {
-    padding: var(--space-2) var(--space-3);
+    width: 100%;
+    padding: var(--space-6) var(--space-3) var(--space-2);
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
-    font-size: 0.875rem;
+    font-size: 0.95rem;
     color: var(--text-main);
     background-color: var(--bg-surface);
-    transition: border-color 0.2s, box-shadow 0.2s;
+    transition: all 0.2s;
 }
 
 .input:focus {
@@ -27,6 +20,43 @@
     box-shadow: 0 0 0 3px var(--primary-light);
 }
 
+.label {
+    position: absolute;
+    left: var(--space-3);
+    top: 14px;
+    /* Vertically centered for default height */
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    pointer-events: none;
+    transition: all 0.2s ease-out;
+    transform-origin: left top;
+}
+
+/* Floating state */
+.input:focus+.label,
+.input:not(:placeholder-shown)+.label {
+    transform: translateY(-10px) scale(0.85);
+    color: var(--primary);
+    font-weight: 500;
+}
+
+/* Textarea specific adjustments */
+textarea.input {
+    min-height: 120px;
+    resize: vertical;
+}
+
+textarea.input+.label {
+    top: var(--space-4);
+    /* Start at top for textarea */
+}
+
+textarea.input:focus+.label,
+textarea.input:not(:placeholder-shown)+.label {
+    transform: translateY(-10px) scale(0.85);
+}
+
 .input::placeholder {
-    color: var(--text-muted);
+    color: transparent;
+    /* Hide actual placeholder to show label */
 }

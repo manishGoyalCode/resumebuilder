@@ -4,8 +4,10 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 var(--space-6);
-    background-color: var(--bg-surface);
-    border-bottom: 1px solid var(--border);
+    background-color: var(--bg-glass);
+    backdrop-filter: blur(var(--blur-glass));
+    -webkit-backdrop-filter: blur(var(--blur-glass));
+    border-bottom: 1px solid var(--bg-glass-border);
     position: sticky;
     top: 0;
     z-index: 10;
