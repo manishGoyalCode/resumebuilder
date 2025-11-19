@@ -43,9 +43,18 @@ export const SkillsForm: React.FC = () => {
     };
 
     const handleSkillsChange = (id: string, value: string) => {
-        // Split by comma and trim
-        const skillList = value.split(',').map(s => s.trim()).filter(Boolean);
+        // Split by comma, allow empty strings while typing to support trailing commas
+        const skillList = value.split(',').map(s => s.trim()); // .filter(Boolean) removed to allow typing comma
         updateCategory(id, 'skills', skillList);
+    };
+
+    const handleSkillsBlur = (id: string) => {
+        // Clean up empty strings on blur
+        const category = skills.find(c => c.id === id);
+        if (category) {
+            const cleanSkills = category.skills.filter(Boolean);
+            updateCategory(id, 'skills', cleanSkills);
+        }
     };
 
     return (
@@ -82,6 +91,7 @@ export const SkillsForm: React.FC = () => {
                             label="Skills (comma separated)"
                             value={category.skills.join(', ')}
                             onChange={(e) => handleSkillsChange(category.id, e.target.value)}
+                            onBlur={() => handleSkillsBlur(category.id)}
                             placeholder="e.g. JavaScript, TypeScript, React"
                         />
                     </div>

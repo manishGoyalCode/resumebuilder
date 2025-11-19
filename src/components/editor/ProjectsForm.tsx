@@ -46,8 +46,16 @@ export const ProjectsForm: React.FC = () => {
     };
 
     const handleTechChange = (id: string, value: string) => {
-        const techList = value.split(',').map(s => s.trim()).filter(Boolean);
+        const techList = value.split(',').map(s => s.trim()); // .filter(Boolean) removed
         updateProject(id, 'technologies', techList);
+    };
+
+    const handleTechBlur = (id: string) => {
+        const project = projects.find(p => p.id === id);
+        if (project) {
+            const cleanTech = project.technologies.filter(Boolean);
+            updateProject(id, 'technologies', cleanTech);
+        }
     };
 
     return (
@@ -92,6 +100,7 @@ export const ProjectsForm: React.FC = () => {
                             label="Technologies (comma separated)"
                             value={proj.technologies.join(', ')}
                             onChange={(e) => handleTechChange(proj.id, e.target.value)}
+                            onBlur={() => handleTechBlur(proj.id)}
                             placeholder="e.g. React, Node.js, MongoDB"
                         />
 
