@@ -54,6 +54,7 @@ export interface ResumeData {
   projects: Project[];
   education: Education[];
   skills: SkillCategory[];
+  selectedTemplate: 'modern' | 'classic' | 'sidebar' | 'compact' | 'creative';
 }
 
 export const initialResumeState: ResumeData = {
@@ -69,5 +70,6 @@ export const initialResumeState: ResumeData = {
   experience: [],
   projects: [],
   education: [],
-  skills: []
+  skills: [],
+  selectedTemplate: 'modern'
 };

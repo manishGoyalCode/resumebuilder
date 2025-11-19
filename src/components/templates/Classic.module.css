@@ -1,0 +1,76 @@
+.resume {
+    font-family: 'Times New Roman', Times, serif;
+    color: #000;
+    line-height: 1.5;
+    padding: 40px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.name {
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.title {
+    font-size: 16px;
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+.contact {
+    font-size: 14px;
+}
+
+.divider {
+    border-bottom: 1px solid #000;
+    margin-bottom: 20px;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.sectionTitle {
+    font-size: 16px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding-bottom: 2px;
+}
+
+.item {
+    margin-bottom: 15px;
+}
+
+.itemHeader {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2px;
+}
+
+.itemDate {
+    font-style: italic;
+}
+
+.itemDescription {
+    white-space: pre-line;
+}
+
+.tech {
+    font-size: 0.9em;
+    font-style: italic;
+    margin-top: 2px;
+}
+
+.link {
+    color: #000;
+    text-decoration: underline;
+    font-size: 0.9em;
+    margin-left: 10px;
+}

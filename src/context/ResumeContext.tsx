@@ -12,15 +12,11 @@ interface ResumeContextType {
 const ResumeContext = createContext<ResumeContextType | undefined>(undefined);
 
 export const ResumeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-    const [resumeData, setResumeData] = useState<ResumeData>(initialResumeState);
-
-    // Load from storage on mount
-    useEffect(() => {
+    const [resumeData, setResumeData] = useState<ResumeData>(() => {
+        // Load from storage on initialization
         const savedData = storageService.load();
-        if (savedData) {
-            setResumeData(savedData);
-        }
-    }, []);
+        return savedData || initialResumeState;
+    });
 
     // Save to storage on change
     useEffect(() => {

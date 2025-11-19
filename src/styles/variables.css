@@ -50,6 +50,7 @@
   --blur-glass: 12px;
 }
 
+/* Dark mode support via media query or class */
 @media (prefers-color-scheme: dark) {
   :root {
     --bg-body: #0f172a;
@@ -65,4 +66,34 @@
     --border: #334155;
     --border-focus: #60a5fa;
   }
+}
+
+:root.dark {
+  --bg-body: #0f172a;
+  --bg-surface: #1e293b;
+  --bg-secondary: #334155;
+  --bg-glass: rgba(30, 41, 59, 0.7);
+  --bg-glass-border: rgba(255, 255, 255, 0.1);
+
+  --text-main: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #64748b;
+
+  --border: #334155;
+  --border-focus: #60a5fa;
+}
+
+:root.light {
+  --bg-body: #f0f4f8;
+  --bg-surface: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-glass: rgba(255, 255, 255, 0.8);
+  --bg-glass-border: rgba(255, 255, 255, 0.4);
+
+  --text-main: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+
+  --border: #e2e8f0;
+  --border-focus: #3b82f6;
 }

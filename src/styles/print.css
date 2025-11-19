@@ -29,16 +29,26 @@
         min-height: auto !important;
     }
 
-    /* Ensure the resume itself is visible and correctly positioned */
-    #resume-preview {
-        visibility: visible;
-        position: static !important;
-        width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        box-shadow: none !important;
+    @page {
+        size: portrait;
+        margin: 0.25in;
     }
 
+    /* Ensure the resume container takes full width but respects the page */
+    #resume-preview {
+        visibility: visible;
+        position: relative !important;
+        width: 100% !important;
+        max-width: 210mm;
+        /* A4 width */
+        margin: 0 auto !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        background: white !important;
+        overflow: visible !important;
+    }
+
+    /* Ensure all children are visible */
     #resume-preview * {
         visibility: visible;
     }
@@ -61,5 +71,6 @@
         overflow: visible;
         margin: 0 !important;
         padding: 0 !important;
+        background: white !important;
     }
 }

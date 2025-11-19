@@ -1,0 +1,171 @@
+.resume {
+    font-family: 'Poppins', sans-serif;
+    color: #2d3748;
+}
+
+.header {
+    background: #2d3748;
+    color: white;
+    padding: 30px 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.headerDecoration {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 100px;
+    height: 100px;
+    background: #4fd1c5;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+.name {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.title {
+    font-size: 16px;
+    color: #a0aec0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.contactBar {
+    background: #4fd1c5;
+    color: #1a202c;
+    padding: 10px 40px;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.container {
+    display: flex;
+    padding: 40px;
+    gap: 40px;
+}
+
+.leftColumn {
+    width: 35%;
+}
+
+.rightColumn {
+    width: 65%;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+.sectionTitle {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.sectionTitle::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: #4fd1c5;
+}
+
+.catName {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.catSkills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.pill {
+    background: #edf2f7;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    color: #4a5568;
+}
+
+.eduItem {
+    margin-bottom: 15px;
+}
+
+.eduDegree {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.eduSchool {
+    font-size: 13px;
+    color: #718096;
+}
+
+.eduDate {
+    font-size: 12px;
+    color: #a0aec0;
+}
+
+.item {
+    margin-bottom: 20px;
+    border-left: 2px solid #e2e8f0;
+    padding-left: 15px;
+}
+
+.itemHeader {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.role {
+    font-weight: 700;
+    font-size: 16px;
+    color: #2d3748;
+}
+
+.company {
+    font-size: 14px;
+    color: #4fd1c5;
+    font-weight: 600;
+}
+
+.date {
+    font-size: 12px;
+    color: #a0aec0;
+    margin-bottom: 5px;
+}
+
+.desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #4a5568;
+}
+
+.tech {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #718096;
+}
+
+.link {
+    font-size: 12px;
+    color: #4fd1c5;
+}

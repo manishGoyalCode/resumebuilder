@@ -4,9 +4,10 @@ import { SkillsForm } from './SkillsForm';
 import { ExperienceForm } from './ExperienceForm';
 import { ProjectsForm } from './ProjectsForm';
 import { EducationForm } from './EducationForm';
+import { TemplatesForm } from './TemplatesForm';
 import styles from './Editor.module.css';
 
-type Section = 'personal' | 'skills' | 'experience' | 'projects' | 'education';
+type Section = 'personal' | 'skills' | 'experience' | 'projects' | 'education' | 'templates';
 
 export const Editor: React.FC = () => {
     const [activeSection, setActiveSection] = useState<Section>('personal');
@@ -17,6 +18,7 @@ export const Editor: React.FC = () => {
         { id: 'experience', label: 'Experience' },
         { id: 'projects', label: 'Projects' },
         { id: 'education', label: 'Education' },
+        { id: 'templates', label: 'Templates' },
     ];
 
     return (
@@ -39,6 +41,7 @@ export const Editor: React.FC = () => {
                 {activeSection === 'experience' && <ExperienceForm />}
                 {activeSection === 'projects' && <ProjectsForm />}
                 {activeSection === 'education' && <EducationForm />}
+                {activeSection === 'templates' && <TemplatesForm />}
             </div>
         </div>
     );
