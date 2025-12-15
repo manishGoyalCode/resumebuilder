@@ -9,7 +9,7 @@ export const Header: React.FC = () => {
     return (
         <header className={styles.header}>
             <div className={styles.logo}>
-                <h1>TechResumePro</h1>
+                <h1>TechResumeNew</h1>
                 <span className={styles.badge}>Beta</span>
                 <SaveStatus />
             </div>
